@@ -1,18 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+import { EntriesComponent } from '../components/entries/entries.component';
+import { EntriesService } from '../components/entries/entries.service';
+
+import { EntryDetailComponent } from  '../components/entry-detail/entry-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EntriesComponent,
+    EntryDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [ EntriesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

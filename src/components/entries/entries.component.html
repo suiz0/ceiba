@@ -1,0 +1,11 @@
+<ul class="list-unstyled">
+  <li class="media" *ngFor="let entry of entries">
+    <img class="mr-3" src="./assets/beer-glass-1.png" width="64px" alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">{{entry.title}}</h5>
+        {{entry.description}}
+        <br />
+        <span class="badge badge-primary">UNIDAD $ {{entry.price}}</span>
+    </div>
+  </li>
+</ul>
