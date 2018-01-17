@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
 })
 export class EntryDetailComponent {
 
+  public isTimeLimited: boolean = false;
+
+  public toggleTimeLimited(isVisible?: boolean) {
+
+    if ( isVisible === undefined ) {
+        this.isTimeLimited = ! this.isTimeLimited;
+    } else {
+      this.isTimeLimited = isVisible;
+    }
+  }
 }

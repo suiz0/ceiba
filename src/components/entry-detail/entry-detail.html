@@ -11,6 +11,43 @@
   </div>
   <div class="form-group">
     <label>Precio por unidad</label>
-    <input type="text" class="form-control"X />
+    <input type="text" class="form-control" />
+  </div>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" href="#hours" data-toggle="tab">Horario</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="hours" role="tabpanel" aria-labelledby="hours-tab">
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="exampleRadios" (click)="toggleTimeLimited(false)" id="exampleRadios1" value="option1" checked>
+          <label class="form-check-label" for="exampleRadios1">Todo el día</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" (click)="toggleTimeLimited(true)" name="exampleRadios" id="exampleRadios2" value="option2">
+          <label class="form-check-label" for="exampleRadios2">
+            Especificar
+          </label>
+        </div>
+      </div>
+      <div class="form-group" *ngIf="isTimeLimited">
+        <label for="inputFrom">De</label>
+        <select id="inputFron" class="custom-select" multiple>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <div class="form-group" *ngIf="isTimeLimited">
+        <label for="inputUntil">Hasta</label>
+        <select id="inputUntil" class="custom-select" multiple>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+    </div>
   </div>
 </form>
