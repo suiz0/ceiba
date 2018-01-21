@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
+  moduleId: module.id,
   selector: 'entry-detail',
-  templateUrl: './entry-detail.html'
+  templateUrl: './entry-detail.html',
+  styleUrls: ['./entry-detail.scss']
 })
 export class EntryDetailComponent {
 
