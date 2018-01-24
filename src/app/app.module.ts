@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { MenuService } from './menu.service';
 
 import { EntriesComponent } from '../components/entries/entries.component';
 import { EntriesService } from '../components/entries/entries.service';
@@ -19,7 +20,7 @@ import { EntryDetailComponent } from  '../components/entry-detail/entry-detail.c
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ EntriesService ],
+  providers: [ EntriesService, MenuService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

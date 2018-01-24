@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { MenuService } from '../../app/menu.service';
 
 @Component({
   moduleId: module.id,
@@ -11,7 +12,7 @@ export class EntryDetailComponent {
 
   public isTimeLimited: boolean = false;
 
-  constructor(private _router: Router) {
+  constructor(private _router: Router, private _menu: MenuService) {
 
   }
 
@@ -25,6 +26,7 @@ export class EntryDetailComponent {
   }
 
   public goToHome() {
+    this._menu.close();
     this._router.navigate(['/']);
   }
 }
