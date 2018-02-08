@@ -11,6 +11,7 @@ import { MenuService } from '../../app/menu.service';
 export class EntryDetailComponent {
 
   public isTimeLimited: boolean = false;
+  public isDateLimited: boolean = false;
 
   constructor(private _router: Router, private _menu: MenuService) {
 
@@ -22,6 +23,14 @@ export class EntryDetailComponent {
         this.isTimeLimited = ! this.isTimeLimited;
     } else {
       this.isTimeLimited = isVisible;
+    }
+  }
+
+  public toggleDateLimited(isVisible: boolean) {
+    if ( isVisible === undefined ) {
+        this.isDateLimited = ! this.isDateLimited;
+    } else {
+      this.isDateLimited = isVisible;
     }
   }
 

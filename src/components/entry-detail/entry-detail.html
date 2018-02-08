@@ -27,7 +27,23 @@
     <input id="inputPrice" type="text" class="form-control" />
   </div>
   <div class="form-group">
-    <label for="inputTags">Días Válidos</label>
+    <label>Válida en</label>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="daysRadio" (click)="toggleDateLimited( false )" id="exampleRadios3" value="option1" checked>
+      <label class="form-check-label" for="exampleRadios3">Días</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="daysRadio" (click)="toggleDateLimited( true )" id="exampleRadios4" value="option2">
+      <label class="form-check-label" for="exampleRadios4">
+        Fecha
+      </label>
+    </div>
+  </div>
+  <div class="form-group" *ngIf="isDateLimited">
+    <input id="inputDate" type="text" class="form-control" aria-describedby="dateHelp">
+    <small id="dateHelp" class="form-text text-muted"></small>
+  </div>
+  <div class="form-group" *ngIf="!isDateLimited">
     <input id="inputTags" type="text" class="form-control" aria-describedby="tagsHelp">
     <small id="tagsHelp" class="form-text text-muted">Día(s) de promoción: Lunes, Jueves. Vacío para todos los días</small>
   </div>
@@ -52,42 +68,12 @@
       </div>
       <div class="form-row" *ngIf="isTimeLimited">
         <div class="col-2">
-          <label for="inputFromHour">Hora</label>
-          <input class="form-control" id="inputFromHour" type="number" min="0" max="12" value="6">
+          <label for="inputFromHour">De</label>
+          <input class="form-control" type="text" id="inputFromHour" />
         </div>
         <div class="col-2">
-          <label for="inputFromMinutes">Minutos</label>
-          <input class="form-control" id="inputFromMinutes" type="number" min="0" max="59" value="0">
-        </div>
-      </div>
-      <div class="form-group" *ngIf="isTimeLimited">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="am">
-          <label class="form-check-label" for="inlineRadio1">A.M.</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" checked  id="inlineRadio2" value="pm">
-          <label class="form-check-label" for="inlineRadio2">P.M.</label>
-        </div>
-      </div>
-      <div class="form-row" *ngIf="isTimeLimited">
-        <div class="col-2">
-          <label for="inputUntilHour">Hora</label>
-          <input class="form-control" id="inputUntilHour" type="number" min="0" max="12" value="6">
-        </div>
-        <div class="col-2">
-          <label for="inputUntilMinutes">Minutos</label>
-          <input class="form-control" id="inputUntilMinutes" type="number" min="0" max="59" value="0">
-        </div>
-      </div>
-      <div class="form-row" *ngIf="isTimeLimited">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="untilOptions" id="inlineRadio3" value="am">
-          <label class="form-check-label" for="inlineRadio3">A.M.</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="untilOptions" checked  id="inlineRadio4" value="pm">
-          <label class="form-check-label" for="inlineRadio4">P.M.</label>
+          <label for="inputUntilHour">Hasta</label>
+          <input class="form-control" type="text" id="inputUntilHour" />
         </div>
       </div>
     </div>
