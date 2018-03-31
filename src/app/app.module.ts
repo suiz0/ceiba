@@ -10,11 +10,14 @@ import { EntriesService } from '../components/entries/entries.service';
 
 import { EntryDetailComponent } from  '../components/entry-detail/entry-detail.component';
 
+import { BootstrapDatepickerComponent } from '../components/bootstrap-datepicker/bootstrap-datepicker.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     EntriesComponent,
-    EntryDetailComponent
+    EntryDetailComponent,
+    BootstrapDatepickerComponent
   ],
   imports: [
     BrowserModule,
